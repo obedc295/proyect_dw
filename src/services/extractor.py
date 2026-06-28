@@ -1,5 +1,5 @@
 import pandas as pd 
-from sqlalchemy import text
+from sqlalchemy import text, inspect
 
 class DataExtractor: 
     def __init__(self, db_client):
@@ -18,3 +18,7 @@ class DataExtractor:
         with self.db.get_oltp_connection() as conn: 
             df = pd.read_sql(text(sql_query), conn)
         return df
+
+    def extract_tables(self):
+        inspector = inspect(self.db)
+        return inspector.get_table_names()
