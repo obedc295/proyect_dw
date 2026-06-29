@@ -7,7 +7,7 @@ class DataLoader:
     def __init__(self, db_client: DatabaseClient):
         self.db_client = db_client
 
-    def load_incremental(self, df_transformer, table_name:str, business_key:str ):
+    def load_incremental(self, df_transformer, table_name:str, business_key:str ) -> int:
         query = f"SELECT {business_key} from {table_name}"
 
         with self.db_client.get_olap_connection() as conn:
@@ -17,6 +17,8 @@ class DataLoader:
             df_load = df_transformer[~df_transformer[business_key].isin(valid_keys)]
 
             df_load.to_sql(table_name, conn, if_exists='append', index=False)
+            conn.commit()
+            return len(df_load)
 
 
 

@@ -1,2 +1,4 @@
 .env
 .venv/
+.venv_unix/
+md_files/
