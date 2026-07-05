@@ -22,8 +22,8 @@ Clone el repositorio en su máquina local utilizando Git o descargue el código 
 
 
 ``` bash
-git clone https://github.com/obedc295/proyecto_dw.git
-cd proyecto_dw
+git clone https://github.com/obedc295/proyect_dw.git
+cd proyect_dw
 ```
 
 
