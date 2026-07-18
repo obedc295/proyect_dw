@@ -2,3 +2,4 @@
 .venv/
 .venv_unix/
 .vscode/
+.idea/
