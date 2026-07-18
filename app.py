@@ -2,7 +2,7 @@ import streamlit as st
 from src.infrastructure.db_client import DatabaseClient
 from src.services.pipeline import ETLPipeline
 
-st.set_page_config(page_title="ETL Dinámico", page_icon="🔄", layout="wide")
+st.set_page_config(page_title="ETL Dinámico", page_icon="📊", layout="wide")
 
 
 @st.cache_resource
